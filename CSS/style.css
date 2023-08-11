@@ -1,0 +1,1544 @@
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+::selection {
+    background-color: #000;
+    color: var(--secondaryColor);
+}
+/* End Global Rules */
+
+/* Start Variables */
+:root {
+    --mainColor: #fff;
+    --secondaryColor: #19d4fa;
+    --thirdColor: #777;
+    --fourthColor: #0f748fb3;
+    --sectionPadding: 60px;
+    scroll-behavior: smooth;
+}
+/* End Variables */
+
+/* Start Components */
+.main-heading {
+    width: 92%;
+    margin: 0 auto 90px;
+    text-align: center;
+} 
+.main-heading h2 {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+.main-heading h2::before,
+.main-heading h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.main-heading h2::before {
+    width: 100px;
+    height: 1.8px;
+    bottom: -20px;
+    background-color: #000;
+}
+.main-heading h2::after {
+    width: 15px;
+    height: 15px;
+    bottom: -28px;
+    border: 2px solid;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.main-heading p {
+    color: var(--thirdColor);
+    font-size: 0.9rem;
+}
+/* End Components */
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* start Landing section */
+#landing-sec {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5) ,rgba(0,0,0,0.5)), url(../Images/landing.jpg) no-repeat;
+    background-position: cover;
+}
+/* Start Header */
+#landing-sec header {
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99999;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #00000020;
+    border-bottom: thin solid #a2a2a2;
+}
+#landing-sec header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    width: calc(100% - 60px);
+    height: 1px;
+    background-color: #a2a2a2;
+    display: none;
+}
+#landing-sec header img {
+    width: 120px
+}
+#landing-sec header nav {
+    display: flex;
+}
+#landing-sec header ul {
+    list-style: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 0;
+    width: 100%;   
+    background-color: #00000070;
+    z-index: 999;
+    display: none;
+}
+#landing-sec header nav > i:hover+ul {
+    display: block;
+} 
+#landing-sec header ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: var(--mainColor, #fff);
+    transition: all 0.5s;
+}
+#landing-sec header ul li a:hover {
+    padding-left: 25px;
+    color: var(--secondaryColor, rgb(0, 255, 242));
+    position: relative;
+}
+#landing-sec header ul li a.active {
+    color: var(--secondaryColor, rgb(0, 255, 242));
+    position: relative;
+}
+#landing-sec header ul li a:hover::before,
+#landing-sec header ul li a.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    height: 1px;
+    background-color: var(--secondaryColor, #00f);
+    animation: animatableBorder 1.7s;
+    width: 100%
+}
+@keyframes animatableBorder {
+    0% {
+        width: 0%
+    } 
+    100% {
+        width: 100%
+    }
+}
+#landing-sec header nav form {
+    padding-left: 20px;
+    position: relative;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+#landing-sec header nav form::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 150%;
+    left: 0;
+    top: -25%;
+    background-color: var(--mainColor, #fff);
+}
+#landing-sec header nav i {
+    font-size: 1.8rem;
+    color: var(--mainColor, #fff);
+    transition: 0.5s;
+}
+#landing-sec header nav i:last-child {
+    font-size: 1.5rem;
+}
+#landing-sec header nav i:hover {
+    color: var(--secondaryColor, #00f);
+    cursor: pointer;
+}
+/* End Header */
+/* Start Main */
+#landing-sec main {
+    padding: 40px;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    color: var(--mainColor);
+    background-color: var(--fourthColor, #0f748fb3);
+    line-height: 1.5;
+}
+#landing-sec main h2 {
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+#landing-sec main p {
+    font-size: 0.9rem;
+}
+/* End Main */
+#landing-sec > i {
+    color: var(--mainColor, #fff);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+    display: none;
+}
+#landing-sec > i:first-of-type {
+    right: 15px;
+}
+#landing-sec > i:last-of-type {
+    left: 15px;
+}
+#landing-sec > i:hover {
+    background-color: var(--secondaryColor);
+}
+#landing-sec > ul {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    display: flex;
+}
+#landing-sec > ul li {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: thin solid var(--mainColor);
+}
+#landing-sec > ul li:not(:last-child) {
+    margin-right: 10px;
+}
+#landing-sec > ul li.active {
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
+}
+/* End Landing section */
+
+/* Start Services section */
+#services-sec {
+    padding-top: var(--sectionPadding, 60px);
+    padding-bottom: var(--sectionPadding, 60px);
+}
+#services-sec article div {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    transition: all 0.3s linear;
+    position: relative;
+}
+#services-sec article div::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--secondaryColor);
+    border-radius: 15px;
+    transition: all 0.3s linear;
+    z-index: -1;
+}
+#services-sec article div:hover::before {
+    width: 100%
+}
+#services-sec article div i {
+    font-size: 2.5rem;
+}
+#services-sec article div img {
+    width: 3.2rem
+}
+#services-sec article div h3 {
+    margin: 25px 0;
+    color: var(--secondaryColor);
+    transition: all 0.3s;
+}
+#services-sec article div p {
+    color: var(--thirdColor);
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+#services-sec article div:hover h3 {
+    color: var(--mainColor);
+}
+#services-sec article div:hover p {
+    color: #000;
+}
+/* End Services section */
+
+/* Start Design section */
+#design-sec {
+    padding-top: var(--sectionPadding, 60px);
+    padding-bottom: var(--sectionPadding, 60px);
+    background: linear-gradient(rgba(0,0,0,0.5) ,rgba(0,0,0,0.5)), url(../Images/design-features.jpg) no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+#design-sec img {
+    padding-top: 100px;
+    position: relative;
+    bottom: -90px;
+    margin-top: -90px;
+    display: none;
+}
+#design-sec aside {
+    padding: 40px;
+    background-color: var(--fourthColor);
+    color: var(--mainColor)
+}
+#design-sec aside h3 {
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+#design-sec aside ul {
+    list-style: none;
+}
+#design-sec aside ul li {
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    column-gap: 15px;
+}
+#design-sec aside ul li i {
+    font-size: 1.1rem;
+}
+/* End Design section */
+
+/* Start Portfolio section */
+#portfolio-sec {
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
+}
+#portfolio-sec ul.shuffle {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+#portfolio-sec ul.shuffle li {
+    padding: 10px 12px;
+    transition: 0.3s linear;
+    padding: 10px 12px;
+}
+#portfolio-sec ul.shuffle li:hover,
+#portfolio-sec ul.shuffle li.active {
+    background-color: rgb(38, 209, 251);
+    color: #fff;
+}
+#portfolio-sec content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+#portfolio-sec content figure {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#portfolio-sec content figure img {
+    width: 100%;
+    display: block;
+    transition: 0.3s;
+}
+#portfolio-sec content figcaption {
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--mainColor);
+    transition: 0.3s;
+}
+#portfolio-sec content figure:hover figcaption {
+    bottom: 0
+}
+#portfolio-sec content figure:hover img {
+    transform: scale(1.1) rotate(3deg);
+}
+#portfolio-sec content figcaption h4 {
+    margin-bottom: 10px;
+}
+#portfolio-sec content figcaption p {
+    color: var(--secondaryColor);
+}
+.btn {
+    display: block;
+    width: 6.5em;
+    height: 2.3em;
+    margin: 30px auto 0;
+    text-decoration: none;
+    background: var(--fourthColor);
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#portfolio-sec content + a.btn {
+    width: 5em;
+    height: 2.1em
+}
+#portfolio-sec content + a:hover {
+    color: var(--mainColor);
+}
+#portfolio-sec content + a:after {
+    content: "";
+    background: var(--secondaryColor);
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+#portfolio-sec content + a:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+/* End Portfolio section */
+
+/* Start Video section */
+#video-sec {
+    position: relative;
+}
+#video-sec video {
+    width: 100%;
+    filter: brightness(50%);
+}
+#video-sec main {
+    text-align: center;
+    background-color: var(--fourthColor);
+    color: var(--mainColor);
+    padding: 30px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+#video-sec main h3,
+#video-sec main button {
+    text-transform: uppercase;
+}
+#video-sec main h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+#video-sec main span {
+    display: block;
+    margin: 25px 0;
+}
+#video-sec main button {
+    display: block;
+    width: fit-content;
+    height: auto;
+    padding: 12px 20px; 
+    font-size: 1rem;
+    background-color: #000;
+}
+#video-sec main button:hover {
+    color: black;
+}
+#video-sec main button:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+#video-sec main button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+/* End Video section */
+
+/* Start About Section */
+#about-sec {
+    padding-top: var(--sectionPadding);
+    overflow: hidden;
+}
+#about-sec .container img {
+    max-width: 100%;
+    margin-left: calc(50% - 3.5%);
+    transform: translateX(-50%); 
+    margin-bottom: -65px;
+}
+/* End About Section */
+
+/* Start Statistics Section */
+#statistics-sec {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Images/stats.png) no-repeat;
+    background-size: cover;
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
+}
+#statistics-sec .container div {
+    background-color: var(--fourthColor);
+    padding: 40px 40px 60px;
+    color: var(--mainColor);
+    text-align: center;
+}
+#statistics-sec .container div i {
+    background-color: #000;
+    padding: 12px;
+    border-radius: 50%;
+    text-align: center;
+}
+#statistics-sec .container div i:first-of-type,
+#statistics-sec .container div i:nth-of-type(2) {
+    padding-left: 13px;
+}
+#statistics-sec .container div p {
+    margin: 20px auto;
+    font-size: 3rem;
+    font-weight: bold;
+}
+#statistics-sec .container div span {
+    font-size: 0.9rem;
+}
+/* End Statistics Section */
+
+/* Start Testimonials Section */
+#testimonials-sec {
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
+    position: relative;
+}
+#testimonials-sec content article {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    padding-top: 20px;
+}
+#testimonials-sec content article img {
+    width: 100px;
+    border-radius: 50%;
+}
+#testimonials-sec content article div {
+    border-bottom: thin solid #ccc;
+    padding: 20px;
+}
+#testimonials-sec content article p {
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+#testimonials-sec content article span {
+    color: var(--thirdColor);
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    font-size: 0.9rem;
+}
+#testimonials-sec ul {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    display: flex;
+}
+#testimonials-sec ul li {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: thin solid var(--thirdColor);
+}
+#testimonials-sec ul li:not(:last-child) {
+    margin-right: 10px;
+}
+#testimonials-sec ul li.active {
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
+}
+/* End Testimonials Section */
+
+/* Start Skills Section */
+#skills-sec {
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
+}
+#skills-sec main {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 45px;
+    column-gap: 40px
+}
+#skills-sec main article {
+    flex-basis: 100%;
+}
+#skills-sec article h4 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+#skills-sec article div{
+    background-color: #dedadc;
+    height: 25px
+}
+#skills-sec article span {
+    display: block;
+    height: 100%;
+    background-color: var(--secondaryColor);
+    position: relative;
+}
+#skills-sec article span::after,
+#skills-sec article span::before {
+position: absolute;
+}
+#skills-sec article span::before {
+    content: attr(data-progress);
+    right: calc((-35px / 2) - 2.5px);
+    color: var(--mainColor);
+    width: 35px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #000;
+    top: -43px
+}
+#skills-sec article span::after {
+    content: "";
+    border: 10px solid transparent;
+    border-top-color: #000;
+    right: -10px;
+    top: -15px
+}
+/* End Skills Section */
+
+/* Start Quote Section */
+#quote-sec {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../Images/quote.jpg) no-repeat;
+    background-size: cover;
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
+    color: var(--mainColor);
+    text-align: center;
+}
+#quote-sec p {
+    font-size: 1.4rem;
+    padding: 0 12px;
+    display: block;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+#quote-sec i {
+    position: relative;
+    font-size: 1rem;
+    top: -8px 
+}
+/* End Quote Section */
+
+/* Start Pricing Section */
+#pricing-sec {
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
+    text-align: center;
+}
+#pricing-sec content {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+#pricing-sec .plan {
+    background-color: #ececec;
+    border-top: thin solid var(--secondaryColor);
+    border-bottom: thin solid var(--secondaryColor);
+}
+#pricing-sec .plan .head {
+    border-bottom: thin solid var(--secondaryColor);
+    padding: 40px
+}
+#pricing-sec .plan .head h3 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+#pricing-sec .plan .head span {
+    font-size: 3.7rem;
+    font-weight: 800;
+    position: relative;
+}
+#pricing-sec .plan .head span::before {
+    content: attr(data-dollar);
+    position: absolute;
+    left: -28px;
+    top: -1px;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+#pricing-sec .plan .head span::after {
+    content: "/Mo";
+    position: absolute;
+    right: -51px;
+    bottom: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#pricing-sec .plan ul {
+    list-style: none;
+    border-bottom: thin solid var(--secondaryColor);
+}
+#pricing-sec .plan ul li {
+    padding: 20px;
+    position: relative;
+}
+#pricing-sec .plan ul li:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    background-color: var(--secondaryColor);
+    width: 30%;
+    height: 1px;
+}
+#pricing-sec .btn {
+    margin: 30px auto;
+}
+#pricing-sec button {
+    display: block;
+    width: fit-content;
+    height: auto;
+    padding: 12px 20px; 
+    font-size: 1rem;
+    background-color: #fff;
+    color: #000;
+    outline: thin solid var(--secondaryColor);
+    outline-offset: -1px;
+    font-weight: normal;
+}
+#pricing-sec button:hover {
+    color: #fff;
+}
+#pricing-sec button:after {
+    content: "";
+    background: var(--secondaryColor);
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+#pricing-sec button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+#pricing-sec content + p {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+#pricing-sec content + p + button.btn {
+    margin-top: 20px;
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
+}
+#pricing-sec content + p + button:after {
+    background-color: var(--fourthColor);
+}
+#pricing-sec content + p + button.btn:hover {
+    outline-color: var(--fourthColor);
+}
+/* End Pricing Section */
+
+/* Strat Subscription Section */
+#subscription-sec {
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Images/subscribe.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#subscription-sec .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+#subscription-sec .container form {
+    display: flex;
+    width: 460px;
+    max-width: 100%;
+    border: thin solid #fff
+}
+#subscription-sec .container form div {
+    position: relative;
+    width: calc(100% - 110px)
+}
+#subscription-sec .container form input {
+    border: none;
+}
+#subscription-sec .container form div input {
+    padding: 20px 0px 20px 55px;
+    background-color: transparent;
+    width: 100%;
+    caret-color: var(--secondaryColor);
+    color: var(--mainColor)
+}
+#subscription-sec .container form div input:focus {
+    outline: none; 
+}
+#subscription-sec .container form div input:focus + i {
+    color: var(--secondaryColor)
+}
+#subscription-sec .container form div input::placeholder {
+    color: #fff;
+    font-size: 1.1rem;
+}
+#subscription-sec .container form div i {
+    font-size: 1.3rem;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s;
+    color: #fff
+}
+#subscription-sec .container form input[type="submit"] {
+    width: 110px;
+    background-color: var(--secondaryColor);
+    color: #fff;
+    text-transform: uppercase;
+    transition: 0.3s;
+    cursor: pointer
+}
+#subscription-sec .container form input[type="submit"]:hover {
+    background-color: var(--fourthColor);
+}
+#subscription-sec .container p {
+    line-height: 1.3;
+    color: #fff;
+    text-align: center;
+}
+
+/* End Subscription Section */
+
+/* Start Contact Section */
+#contact-sec {
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
+}
+#contact-sec content {
+    text-align: center;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+}
+#contact-sec content div:last-child {
+    margin-top: 40px;
+}
+#contact-sec content article div h4 {
+    margin-bottom: 20px;
+    font-weight: normal;
+    font-size: 1.1rem;
+}
+#contact-sec content article div p,
+#contact-sec content article div address {
+    color: var(--thirdColor);
+    line-height: 1.5;
+}
+#contact-sec content form {
+    display: grid;
+    max-width: 850px;
+    gap: 25px;
+}
+#contact-sec content form input,
+#contact-sec content form textarea {
+    max-width: 850px;
+}
+#contact-sec form input:not([type="submit"]),
+#contact-sec form textarea {
+    padding: 15px;
+    border: thin solid #ccc;
+    outline: none
+}
+.button {
+    position: relative;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: var(--secondaryColor);
+    width: fit-content;
+    text-transform: uppercase;
+    margin-left: auto;
+    padding: 20px;
+    transition: all 0.2s ease;
+}
+.button:hover {
+    background-color: var(--fourthColor);
+}
+.button:active {
+    transform: scale(0.96);
+}
+.button:before,
+.button:after {
+    position: absolute;
+    content: "";
+    width: 150%;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
+}
+.button:hover:before {
+    top: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+        10% 10%, 18% 18%;
+    background-position: 50% 120%;
+    animation: greentopBubbles 0.6s ease;
+}
+@keyframes greentopBubbles {
+0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+    40% 90%, 55% 90%, 70% 90%;
+}
+50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+    50% 50%, 65% 20%, 90% 30%;
+}
+100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+    50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+}
+}
+.button:hover::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    background-position: 50% 0%;
+    animation: greenbottomBubbles 0.6s ease;
+}
+@keyframes greenbottomBubbles {
+0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+    70% -10%, 70% 0%;
+}
+
+50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+    105% 0%;
+}
+
+100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+    110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+}
+}
+/* End Contact Section */
+
+/* Start Footer */
+footer {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../Images/subscribe.jpg) no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    padding-top: calc(var(--sectionPadding) - 20px);
+    padding-bottom: calc(var(--sectionPadding) - 20px);
+    text-align: center;
+    color: #fff;
+    font-size: 0.9rem;
+    position: relative;
+}
+footer aside {
+    margin: 60px auto 60px;
+}
+footer aside h4 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 50px;
+}
+footer aside h4::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -25px;
+    width: 200px;
+    height: 1px;
+    background-color: var(--mainColor);
+}
+footer aside div a {
+    text-decoration: none;
+    color: var(--mainColor);
+    margin: 15px;
+}
+footer aside div a i {
+    transition: 0.3s linear;
+}
+footer aside div a:hover i {
+    color: var(--secondaryColor);
+}
+footer > p {
+    margin-bottom: 10px;
+}
+footer > p span,
+footer > p a {
+    color: var(--secondaryColor);
+    font-weight: bold;
+}
+footer > p a {
+    text-decoration: none;
+    transition: 0.3s linear;
+}
+footer > p a:hover {
+    color: #0f0
+}
+footer > span + a {
+    text-decoration: none;
+    color: var(--secondaryColor);
+    /* font-size: 2rem; */
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    transition: 0.3s linear;
+}
+footer > span + a:hover {
+    color: var(--fourthColor)
+}
+/* End Footer */
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+    }
+    
+    /* Strat Components */
+    .main-heading {
+        width: 70%;
+    }
+    .main-heading h2 {
+        font-size: 2.6rem;
+    }
+    .main-heading p {
+        font-size: 1rem;
+    }
+    /* End Components */
+
+    /* Start Landing Section */
+    /* Start Main */
+    #landing-sec main {
+        width: 50%;
+        padding-left: 58px;
+    }
+    #landing-sec > i {
+        font-size: 2rem;
+    }
+    End Main */
+    #landing-sec > i {
+        display: block;
+    }
+    /* End Landing Section */
+
+    /* Start Services section */
+    #services-sec article {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px
+    }
+    /* End Services section */
+
+    /* Start Design section */
+    #design-sec {
+        padding: 0
+    }
+    #design-sec img {
+        display: block;
+    }
+    #design-sec aside {
+        width: 50%;
+        padding-right: 58px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #design-sec aside h3 {
+        font-size: 1.3rem;
+    }
+    #design-sec aside ul li i {
+        font-size: 1.3rem;
+    }
+    /* End Design section */
+
+    /* Strat Portfolio Section */
+    #portfolio-sec content figure {
+        flex-basis: calc(50% - 1px)
+    }
+    /* End Portfolio Section */
+
+    /* Start Video Section  */
+    #video-sec main {
+        padding: 50px;
+    }
+    #video-sec main h3 {
+        font-size: 1.9rem;
+    }
+    #video-sec main span {
+        font-size: 1.1rem;
+    }
+    #video-sec main button {
+        font-size: 1.1rem;
+    }
+    /* End Video Section  */
+
+    /* Start About Section */
+    #about-sec .container img {
+        width: 80%;
+        margin-bottom: -100px;
+    }
+    /* End About Section */
+
+    /* Start Statistics Section */
+    #statistics-sec .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #statistics-sec .container div {
+        flex-basis: 50%;
+    }
+    /* End Statistics Section */
+
+    /* Start Testimonials Section */
+    #testimonials-sec content article {
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+        text-align: left;
+        align-items: self-start;
+        padding-top: 0;
+        margin-bottom: 30px;
+    }
+    #testimonials-sec content article div {
+        padding: 0 0 20px 0;
+    }
+    #testimonials-sec content article p {
+        margin-top: 0;
+        line-height: 2;
+        display: flex;
+    }
+    /* End Testimonials Section */
+
+    /* Start Skills Section */
+    #skills-sec main article {
+        flex-basis: calc(50% - 20px);
+    }
+    /* End Skills Section */
+
+    /* Start Quote Section */
+    #quote-sec p {
+        font-size: 1.7rem;
+    }
+    #quote-sec i {
+        top: -12px 
+    }
+    /* End Quote Section */
+
+    /* Start Pricing Section */
+    #pricing-sec content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #pricing-sec content + p {
+        font-size: 1.3rem;
+    }
+    /* End Pricing Section */
+    
+    /* Start Contact Section */
+    #contact-sec content {
+        flex-direction: row-reverse;
+    }
+    #contact-sec content article div:last-child {
+        margin-top: 120px;
+    }
+    #contact-sec content article div {
+        text-align: left;
+    }
+    #contact-sec content article {
+        flex-basis: 20%;
+    }
+    #contact-sec content form {
+        flex-basis: calc(80% - 40px);
+    }
+    /* End Contact Section */
+
+    /* Start Footer */
+    footer {
+        font-size: 1rem
+    }
+    footer img {
+        width: 110px
+    }
+    /* End Footer */
+}
+
+
+/* Large devices (laptops, 992px and up) */
+@media(min-width:992px){
+    .container{
+        width: 970px;
+	}
+    
+    /* Strat Components */
+    .main-heading {
+        width: 50%
+    }
+    /* End Components */
+    
+    /* Start Landing Section */
+    /* Start Header */
+    #landing-sec header {
+        position: relative;
+        padding-left: 60px;
+        padding-right: 60px;
+        background-color: transparent;
+        border: none;
+    }
+    #landing-sec header::after {
+        left: 60px;
+        width: calc(100% - 120px);
+        display: block;
+    }
+    #landing-sec header nav > i {
+        display: none;
+    }
+    #landing-sec header nav ul {
+        position:static;
+        background-color: transparent;
+        display: flex;
+    }
+    #landing-sec header nav form::before {
+        height: 70%;
+        top: 15%;
+    }
+    #landing-sec header ul li a {
+        padding: 24px 10px;
+        transition: 0.1s;
+    }
+    #landing-sec header ul li a:hover {
+        padding-left: 10px;
+    }
+    #landing-sec header ul li a:hover::before {
+        animation: animatableBorder 0.5s;
+    }
+    /* End Header */
+    /* Start Main */
+    #landing-sec main h2 {
+        font-size: 1.9rem;
+    }
+    #landing-sec main p {
+        font-size: 1rem;
+    }
+    /* End Main */
+    /* End Landing Section */
+    
+    /* Start Services section */
+    #services-sec article {
+        gap: 20px
+    }
+    #services-sec article div h3 {
+        font-size: 1.4rem;
+    }
+    #services-sec article div p {
+        font-size: 1rem;
+    }
+    /* End Services section */
+    
+    /* Start Design section */
+    #design-sec aside h3 {
+        font-size: 1.7rem;
+    }
+    #design-sec aside p {
+        font-size: 1.1rem;
+    }
+    #design-sec aside ul li i {
+        font-size: 1.1rem;
+    }
+    /* End Design section */
+    
+    /* Start About Section */
+    #about-sec .container img {
+        margin-bottom: -120px;
+    }
+    /* End About Section */
+    
+    /* Start Statistics Section */
+    #statistics-sec .container div {
+        flex-basis: 25%;
+    }
+    /* End Statistics Section */
+    
+    /* Start Testimonials Section */
+    #testimonials-sec content {
+        display: flex;
+        align-items: center;
+        column-gap: 50px;
+    }
+    #testimonials-sec content article {
+        column-gap: 20px;
+    }
+    #testimonials-sec content article p {
+        line-height: 1.3;
+        padding-bottom: 12px;
+        font-size: 0.9rem;
+    }
+    /* End Testimonials Section */
+    
+    /* Start Quote Section */
+    #quote-sec p {
+        font-size: 2rem;
+    }
+    #quote-sec i {
+        font-size: 1.1rem;
+        top: -15px 
+    }
+    /* End Quote Section */
+
+    /* Start Pricing Section */
+    #pricing-sec content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #pricing-sec content .plan:last-of-type {
+        grid-column: 2 / 3;
+    }
+    /* End Pricing Section */
+
+    /* Strat Subscription Section */
+    #subscription-sec .container form {
+        flex-basis: calc(40% - 40px);
+    }
+    #subscription-sec .container p {
+        flex-basis: calc(60%);
+        text-align: left;
+        line-height: 2;
+    }
+    /* End Subscription Section */
+
+    /* Start Footer */
+    footer > span + a {
+        position: fixed;
+        right: 20px;
+        bottom: 15px;
+    }
+    /* End Footer */
+}
+
+/* X-Large devices (desktops, 1200px and up) */
+@media(min-width:1200px){
+    .container{
+        width: 1170px;
+	}
+    
+    /* Strat Components */
+    .main-heading h2 {
+        font-size: 3rem;
+    }
+    .main-heading p {
+        font-size: 1.1rem;
+    }
+    /* End Components */
+    
+    /* Start Header */
+    #landing-sec header {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    #landing-sec header::after {
+        left: 75px;
+        width: calc(100% - 140px);
+    }
+    /* End Header */
+
+    /* Start Services section */
+    #services-sec article {
+        gap: 40px
+    }
+    /* End Services section */
+
+    /* Strat Portfolio Section */
+    #portfolio-sec content figure {
+        flex-basis: calc(25% - 1.5px)
+    }
+    /* End Portfolio Section */
+
+    /* Start About Section */
+    #about-sec .container img {
+        width: 70%;
+        margin-bottom: -140px;
+    }
+    /* End About Section */
+
+    /* Start Testimonials Section */
+    #testimonials-sec content article p {
+        line-height: 1.6;
+        font-size: 1rem;
+    }
+    /* End Testimonials Section */
+    
+    /* Start Skills Section */
+    #skills-sec main {
+        gap: 80px;
+    }
+    #skills-sec main article {
+        flex-basis: calc(50% - 40px);
+    }
+    /* End Skills Section */
+
+    /* Start Pricing Section */
+    #pricing-sec content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #pricing-sec content .plan:last-of-type {
+        grid-area: auto;
+    }
+    /* End Pricing Section */
+
+    /* Start Contact Section */
+    #contact-sec content {
+        justify-content: space-evenly;
+    }
+    /* End Contact Section */
+
+    /* Start Footer */
+    footer {
+        font-size: 1.1rem
+    }
+    footer img {
+        width: 120px
+    }
+    footer aside h4 {
+        font-size: 1.5rem;
+    }
+    footer aside h4::after {
+        width: 220px
+    }
+    footer aside div a {
+        font-size: 1.2rem
+    }
+    /* End Footer */
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media(min-width:1400px){
+    .container{
+        width: 1370px;
+	}
+    
+    /* Start Services section */
+    #services-sec article {
+        gap: 70px
+    }
+    /* End Services section */
+
+    /* Start Video Section  */
+    #video-sec main h3 {
+        font-size: 2rem;
+    }
+    #video-sec main span {
+        font-size: 1.2rem;
+    }
+    #video-sec main button {
+        font-size: 1.2rem;
+    }
+    /* End Video Section  */
+
+    /* Start About Section */
+    #about-sec .container img {
+        width: 60%;
+        margin-bottom: -140px;
+    }
+    /* End About Section */
+    
+    /* Start Statistics Section */
+    #statistics-sec .container div {
+        flex-basis: 25%;
+    }
+    #statistics-sec .container div p {
+        font-size: 3.2rem
+    }
+    #statistics-sec .container div span {
+        font-size: 1rem
+    }
+    /* End Statistics Section */
+
+    /* Start Quote Section */
+    #quote-sec p {
+        font-size: 2.4rem;
+    }
+    /* End Quote Section */
+}
