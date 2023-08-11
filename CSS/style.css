@@ -517,7 +517,7 @@ body {
 
 /* Start Statistics Section */
 #statistics-sec {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Images/stats.png) no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Images/stats.webp) no-repeat;
     background-size: cover;
     padding-top: var(--sectionPadding);
     padding-bottom: var(--sectionPadding);
