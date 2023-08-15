@@ -117,16 +117,16 @@ body {
 #landing-sec header nav {
     display: flex;
 }
-#landing-sec header ul {
+#landing-sec header nav ul {
     list-style: none;
     position: absolute;
     top: -500px;
     right: 0;
     width: 100%;   
     background-color: #00000070;
-    z-index: -1;
     backdrop-filter: blur(8px);
     transition: 0.3s;
+    z-index: -1;
 }
 #landing-sec header nav > i:hover+ul {
     top: calc(100% + 1px);
@@ -1291,7 +1291,8 @@ footer > span + a:hover {
         position:static;
         background-color: transparent;
         display: flex;
-        backdrop-filter: blur(0px)
+        backdrop-filter: blur(0px);
+        z-index: 9999;
     }
     #landing-sec header nav form::before {
         height: 70%;
