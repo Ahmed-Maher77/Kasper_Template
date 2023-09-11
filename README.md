@@ -4,4 +4,4 @@
 Kasper Template is an art production company
 
 ##### Used Technologies: HTML/HTML5 - CSS/CSS3 - Responsive Design - JavaScript - Git
-##### Demo: https://kasper-template3.web.app/
+##### Demo (Live): https://kasper-template3.web.app/
