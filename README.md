@@ -46,7 +46,7 @@ Kasper Template is a responsive website template designed for art production com
 
 ## 👀 Website Preview
 <a href="https://kasper-template3.web.app/" title="demo">
-  <img src="uploaded-img-on-github-readme" alt="website preview" width="400">
+  <img src="https://github.com/user-attachments/assets/91c78e20-4d2d-41b7-855e-61baa0c60a04" alt="website preview - UI Mockup" width="400">
 </a>
 
 ---
